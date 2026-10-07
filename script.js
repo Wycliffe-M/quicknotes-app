@@ -7,6 +7,7 @@ const count = document.querySelector("#note-count");
 const errorMessage = document.querySelector("#error-message");
 const STORAGE_KEY = "quicknotes";
 const searchInput = document.querySelector("#search-input");
+const clearAllBtn = document.querySelector("#clear-all-btn");
 
 // ---------- 2. The data: one array is the single source of truth ----------
 let notes = loadNotes();
@@ -35,6 +36,16 @@ function deleteNote(id) {
     notes = notes.filter((note) => note.id !== id);
     saveNotes();
     render();
+}
+
+function clearAllNotes() {
+  if (notes.length === 0) return; // nothing to delete
+
+  if (confirm("Delete all notes?")) {
+    notes = [];
+    saveNotes();
+    render();
+  }
 }
 
 // ---------- 3. Draw the notes on the page ----------
@@ -108,6 +119,7 @@ function validateText(text) {
 
 // ---------- 5. Listen for the form ----------
 searchInput.addEventListener("input", render);
+clearAllBtn.addEventListener("click", clearAllNotes);
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();

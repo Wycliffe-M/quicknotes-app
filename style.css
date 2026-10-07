@@ -177,3 +177,12 @@ button:hover {
         min-width: 0;
     }
 }
+
+#clear-all-btn {
+  margin-bottom: 12px;
+  background-color: #8e0000;
+}
+
+#clear-all-btn:hover {
+  background-color: #6b0000;
+}
