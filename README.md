@@ -11,6 +11,7 @@ QuickNotes is a simple note-taking web app for capturing quick thoughts before t
 - Notes are saved in the browser and survive a refresh
 - Note count that handles zero, one and many notes
 - Responsive layout for small screens
+- Clear all notes at once, with a confirmation box
 
 ## How to Run Locally
 
